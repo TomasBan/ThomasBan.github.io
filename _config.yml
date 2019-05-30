@@ -1,11 +1,11 @@
 # Basic
 title: 小陆菜园
 subtitle: 播种成长的种子
-welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
-description: Vno Jekyll is a port of my Ghost theme vno.
-creator: <a href="http://onev.cat">@onevcat</a>
+welcome_message: <a href="#" target="_blank">Welcome~</a>
+description: 记录生活的点滴
+creator: <a href="#">@陆彬</a>
 
-url: "http://vno.onevcat.com"
+url: "#"
 
 permalink: /:year/:month/:title/
 
@@ -22,7 +22,7 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: Projects, description: My Projects, url: 'http://project.onevcat.com'}
+    - {title: Projects, description: My Projects, url: '#'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
