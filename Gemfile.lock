@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/pattex/jekyll-tagging.git
+  revision: 76fbc51bc644c660144ed9f6a1b0a854b23ee0f8
+  specs:
+    jekyll-tagging (1.1.0)
+      nuggets
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -32,8 +39,6 @@ GEM
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
-    jekyll-tagging (1.1.0)
-      nuggets
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (1.17.0)
@@ -66,7 +71,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   jekyll-paginate
-  jekyll-tagging
+  jekyll-tagging!
 
 BUNDLED WITH
    2.0.1
