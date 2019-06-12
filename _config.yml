@@ -26,9 +26,14 @@ nav:
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
+
 paginate: 10
 paginate_path: "page/:num/"
+
+tag_page_layout: tag_page
+tag_page_dir: tag
+tag_permalink_style: pretty
 
 # Comment
 comment:
