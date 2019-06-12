@@ -5,6 +5,7 @@ welcome_message: <a href="#" target="_blank">Welcome~</a>
 description: 记录生活的点滴
 creator: <a href="#">@陆彬</a>
 
+tagcloud: 
 url: "#"
 
 permalink: /:year/:month/:title/
