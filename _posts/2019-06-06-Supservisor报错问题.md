@@ -2,7 +2,7 @@
 layout: post
 title:  OSX Supervisor报错
 date: 2019-06-06 16:23:51.000000000 +09:00
-tags: [开发]
+tags: 开发
 ---
 
 ## 问题描述
