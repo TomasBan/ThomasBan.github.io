@@ -53,4 +53,5 @@ ga:
     # id: your_ga_id
     # host: your_host
 
+safe: false
 # theme: jekyll-theme-time-machine
