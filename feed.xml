@@ -5,9 +5,84 @@
     <description>记录生活的点滴</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 13 Jun 2019 15:16:11 +0800</pubDate>
-    <lastBuildDate>Thu, 13 Jun 2019 15:16:11 +0800</lastBuildDate>
+    <pubDate>Thu, 13 Jun 2019 17:27:14 +0800</pubDate>
+    <lastBuildDate>Thu, 13 Jun 2019 17:27:14 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Jekyll折腾标签的那些事</title>
+        <description>&lt;h2 id=&quot;动机&quot;&gt;动机&lt;/h2&gt;
+
+&lt;p&gt;博客一开始建立的时候，就一直在思考，只有一个列表的话，怎么更好地展示个人博客的内容呢？于是乎，就产生了给这个主题增加一个分类的小功能，了解到在jekyll里面有一个插件&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-tagging&lt;/code&gt;可以自动根据文章的tag生成各种标签的插件。&lt;/p&gt;
+
+&lt;h2 id=&quot;动手&quot;&gt;动手&lt;/h2&gt;
+
+&lt;h5 id=&quot;1利用gem工具安装jekyll-tagging插件&quot;&gt;1.利用&lt;code class=&quot;highlighter-rouge&quot;&gt;Gem&lt;/code&gt;工具安装&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-tagging&lt;/code&gt;插件&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll-tagging
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;2在gemfile里面增加相关的插件配置&quot;&gt;2.在GemFile里面增加相关的插件配置&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem 'jekyll-tagging',:git =&amp;gt; 'https://github.com/pattex/jekyll-tagging.git'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;3在根目录下面增加一个_pluginsextrb的文件&quot;&gt;3.在根目录下面增加一个&lt;code class=&quot;highlighter-rouge&quot;&gt;_plugins/ext.rb&lt;/code&gt;的文件&lt;/h5&gt;
+
+&lt;h5 id=&quot;4在extrb文件中增加插件的配置项&quot;&gt;4.在&lt;code class=&quot;highlighter-rouge&quot;&gt;ext.rb&lt;/code&gt;文件中增加插件的配置项&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;require 'jekyll/tagging'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;5在_configyml增加下面的配置项&quot;&gt;5.在&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;增加下面的配置项&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tag_page_layout: tag_page    #配置布局
+tag_page_dir: tag            #标签页的连接目录
+tag_permalink_style: pretty  #生成的链接的样式
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;通过上面的配置，jekyll就可以通过site命令访问到tagcloud变量&lt;/p&gt;
+
+&lt;h5 id=&quot;6在_layout目录下面增加tag_pagehtml的标签列表页面&quot;&gt;6.在&lt;code class=&quot;highlighter-rouge&quot;&gt;_layout&lt;/code&gt;目录下面增加&lt;code class=&quot;highlighter-rouge&quot;&gt;tag_page.html&lt;/code&gt;的标签列表页面&lt;/h5&gt;
+
+&lt;p&gt;具体代码参考文章&lt;a href=&quot;https://www.rubydoc.info/gems/jekyll-tagging/frames&quot;&gt;jekyll-tagging官方文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;7通过上面步骤即可通过your-hosttagyour-tag去访问个人的标签列表了&quot;&gt;7.通过上面步骤即可通过&lt;code class=&quot;highlighter-rouge&quot;&gt;your-host/tag/your-tag&lt;/code&gt;去访问个人的标签列表了&lt;/h5&gt;
+
+&lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
+
+&lt;p&gt;由于我个人博客是建立在&lt;code class=&quot;highlighter-rouge&quot;&gt;github&lt;/code&gt;上面的，所以当我以这样的配置上传到&lt;code class=&quot;highlighter-rouge&quot;&gt;github&lt;/code&gt;的仓库里面去之后，发现&lt;code class=&quot;highlighter-rouge&quot;&gt;git pages&lt;/code&gt;并不能像我想象之中的正常运行，在显示所有的标签页的内容全部显示为&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll::Drops::SiteDrop&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;google显示的内容很少，只有少部分指出说是由于Jeykll无法正常使用site全局变量导致的，参考了很多的博客，归纳成下面的几点&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;配置文件没有配置相关的变量&lt;/li&gt;
+  &lt;li&gt;自己删除了_plugins文件夹&lt;/li&gt;
+  &lt;li&gt;没有安装到相关的插件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;经过我的测试，如果在配置文件里面配置了&lt;code class=&quot;highlighter-rouge&quot;&gt;safe:true&lt;/code&gt;,那么在我本地显示的内容就和github上面的一摸一样。那么结果很清晰了，那就是github没有关闭jekyll的安全模式。所以转变思路，如何在gitpage上面使用插件。看到官方的&lt;a href=&quot;https://help.github.com/en/articles/configuring-jekyll-plugins&quot;&gt;Configuring Jekyll plugins&lt;/a&gt;没有任何的作用。&lt;/p&gt;
+
+&lt;p&gt;最后偶然地找到相关解决方案：用编译后的静态内容直接放到master分支的根目录之下，将其他的文件全部删除。（参考链接&lt;a href=&quot;https://www.liaohuqiu.net/cn/posts/jekyll-plugins-on-github-pages/&quot;&gt;Jekyll 插件和 Github Pages&lt;/a&gt;）&lt;/p&gt;
+
+&lt;h2 id=&quot;思考&quot;&gt;思考&lt;/h2&gt;
+
+&lt;p&gt;在寻找问题的解决方案的时候，有时候太过于一根筋，一味着寻找相关答案，但是答案往往是要跳出来，才能更好的寻找到答案。&lt;/p&gt;
+
+&lt;h2 id=&quot;参考博客&quot;&gt;参考博客&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.rubydoc.info/gems/jekyll-tagging/frames&quot;&gt;jekyll-tagging官方文档&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.liaohuqiu.net/cn/posts/jekyll-plugins-on-github-pages/&quot;&gt;Jekyll 插件和 Github Pages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.github.com/en/articles/configuring-jekyll-plugins&quot;&gt;Configuring Jekyll plugins&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 13 Jun 2019 15:40:53 +0800</pubDate>
+        <link>http://localhost:4000/2019/06/Jekyll%E6%8A%98%E8%85%BE%E6%A0%87%E7%AD%BE%E9%82%A3%E4%BA%9B%E4%BA%8B/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/06/Jekyll%E6%8A%98%E8%85%BE%E6%A0%87%E7%AD%BE%E9%82%A3%E4%BA%9B%E4%BA%8B/</guid>
+        
+        <category>Jekyll</category>
+        
+        
+      </item>
     
       <item>
         <title>算法学习日志1——罗马数字转整数</title>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Jekyll折腾标签的那些事</title>
+  <meta name="description" content="动机">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jekyll折腾标签的那些事">
+  <meta name="twitter:description" content="动机">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Jekyll折腾标签的那些事">
+  <meta property="og:description" content="动机">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2019/06/Jekyll%E6%8A%98%E8%85%BE%E6%A0%87%E7%AD%BE%E9%82%A3%E4%BA%9B%E4%BA%8B/">
+  <link rel="alternate" type="application/rss+xml" title="小陆菜园" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 小陆菜园 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="小陆菜园 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 小陆菜园" class="blog-button">小陆菜园</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">播种成长的种子</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">记录生活的点滴</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        <p class="panel-cover__description"><a href="#" target="_blank">Welcome~</a></p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="Visit blog" class="blog-button">Blog</a></li>
+                
+                  <li class="navigation__item"><a href="#" target="_blank" title="My Projects">Projects</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+
+          <div style="margin-top:1.5em;">
+            文章类型选择：<a href="/tag/jekyll/" class="set-1">Jekyll</a> <a href="/tag/%E5%BC%80%E5%8F%91/" class="set-5">开发</a> <a href="/tag/%E7%AE%97%E6%B3%95/" class="set-1">算法</a>
+          </div>
+          
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+
+  
+  
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:lubin62@qq.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-blue"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-06-13 15:40:53 +0800" itemprop="datePublished" class="post-meta__date date">2019-06-13</time> &#8226; <span class="post-meta__tags tags">Jekyll</span>
+    </div>
+    <h1 class="post-title">Jekyll折腾标签的那些事</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="动机">动机</h2>
+
+<p>博客一开始建立的时候，就一直在思考，只有一个列表的话，怎么更好地展示个人博客的内容呢？于是乎，就产生了给这个主题增加一个分类的小功能，了解到在jekyll里面有一个插件<code class="highlighter-rouge">jekyll-tagging</code>可以自动根据文章的tag生成各种标签的插件。</p>
+
+<h2 id="动手">动手</h2>
+
+<h5 id="1利用gem工具安装jekyll-tagging插件">1.利用<code class="highlighter-rouge">Gem</code>工具安装<code class="highlighter-rouge">jekyll-tagging</code>插件</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll-tagging
+</code></pre></div></div>
+
+<h5 id="2在gemfile里面增加相关的插件配置">2.在GemFile里面增加相关的插件配置</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem 'jekyll-tagging',:git =&gt; 'https://github.com/pattex/jekyll-tagging.git'
+</code></pre></div></div>
+
+<h5 id="3在根目录下面增加一个_pluginsextrb的文件">3.在根目录下面增加一个<code class="highlighter-rouge">_plugins/ext.rb</code>的文件</h5>
+
+<h5 id="4在extrb文件中增加插件的配置项">4.在<code class="highlighter-rouge">ext.rb</code>文件中增加插件的配置项</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>require 'jekyll/tagging'
+</code></pre></div></div>
+
+<h5 id="5在_configyml增加下面的配置项">5.在<code class="highlighter-rouge">_config.yml</code>增加下面的配置项</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tag_page_layout: tag_page    #配置布局
+tag_page_dir: tag            #标签页的连接目录
+tag_permalink_style: pretty  #生成的链接的样式
+</code></pre></div></div>
+
+<p>通过上面的配置，jekyll就可以通过site命令访问到tagcloud变量</p>
+
+<h5 id="6在_layout目录下面增加tag_pagehtml的标签列表页面">6.在<code class="highlighter-rouge">_layout</code>目录下面增加<code class="highlighter-rouge">tag_page.html</code>的标签列表页面</h5>
+
+<p>具体代码参考文章<a href="https://www.rubydoc.info/gems/jekyll-tagging/frames">jekyll-tagging官方文档</a></p>
+
+<h5 id="7通过上面步骤即可通过your-hosttagyour-tag去访问个人的标签列表了">7.通过上面步骤即可通过<code class="highlighter-rouge">your-host/tag/your-tag</code>去访问个人的标签列表了</h5>
+
+<h2 id="问题">问题</h2>
+
+<p>由于我个人博客是建立在<code class="highlighter-rouge">github</code>上面的，所以当我以这样的配置上传到<code class="highlighter-rouge">github</code>的仓库里面去之后，发现<code class="highlighter-rouge">git pages</code>并不能像我想象之中的正常运行，在显示所有的标签页的内容全部显示为<code class="highlighter-rouge">Jekyll::Drops::SiteDrop</code></p>
+
+<p>google显示的内容很少，只有少部分指出说是由于Jeykll无法正常使用site全局变量导致的，参考了很多的博客，归纳成下面的几点</p>
+<ul>
+  <li>配置文件没有配置相关的变量</li>
+  <li>自己删除了_plugins文件夹</li>
+  <li>没有安装到相关的插件</li>
+</ul>
+
+<p>经过我的测试，如果在配置文件里面配置了<code class="highlighter-rouge">safe:true</code>,那么在我本地显示的内容就和github上面的一摸一样。那么结果很清晰了，那就是github没有关闭jekyll的安全模式。所以转变思路，如何在gitpage上面使用插件。看到官方的<a href="https://help.github.com/en/articles/configuring-jekyll-plugins">Configuring Jekyll plugins</a>没有任何的作用。</p>
+
+<p>最后偶然地找到相关解决方案：用编译后的静态内容直接放到master分支的根目录之下，将其他的文件全部删除。（参考链接<a href="https://www.liaohuqiu.net/cn/posts/jekyll-plugins-on-github-pages/">Jekyll 插件和 Github Pages</a>）</p>
+
+<h2 id="思考">思考</h2>
+
+<p>在寻找问题的解决方案的时候，有时候太过于一根筋，一味着寻找相关答案，但是答案往往是要跳出来，才能更好的寻找到答案。</p>
+
+<h2 id="参考博客">参考博客</h2>
+<ul>
+  <li><a href="https://www.rubydoc.info/gems/jekyll-tagging/frames">jekyll-tagging官方文档</a></li>
+  <li><a href="https://www.liaohuqiu.net/cn/posts/jekyll-plugins-on-github-pages/">Jekyll 插件和 Github Pages</a></li>
+  <li><a href="https://help.github.com/en/articles/configuring-jekyll-plugins">Configuring Jekyll plugins</a></li>
+</ul>
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2019/06/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%971/" title="link to 算法学习日志1——罗马数字转整数">算法学习日志1——罗马数字转整数</a></h2>
+       <p class="excerpt">题目描述罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。字符          数值I             1V             5X             10L             50C             100D             500M             1000例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。通...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2019-06-10 17:20:41 +0800" class="post-list__meta--date date">2019-06-10</time> &#8226; <span class="post-list__meta--tags tags">算法</span><a class="btn-border-small" href=/2019/06/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%971/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+
+            <section class="footer">
+    <footer>
+    	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
+        <!--<span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-06-13 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>-->
+        <span class="footer__copyright">本站由 <a href="#">@陆彬</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站主题</a> - &copy; 2019</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>
