@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>OSX安装PHP5.6</title>
+  <meta name="description" content="系统环境">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OSX安装PHP5.6">
+  <meta name="twitter:description" content="系统环境">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="OSX安装PHP5.6">
+  <meta property="og:description" content="系统环境">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2019/06/OSX%E5%AE%89%E8%A3%85PHP5.6/">
+  <link rel="alternate" type="application/rss+xml" title="小陆菜园" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 小陆菜园 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="小陆菜园 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 小陆菜园" class="blog-button">小陆菜园</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">播种成长的种子</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">记录生活的点滴</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        <p class="panel-cover__description"><a href="#" target="_blank">Welcome~</a></p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="Visit blog" class="blog-button">Blog</a></li>
+                
+                  <li class="navigation__item"><a href="#" target="_blank" title="My Projects">Projects</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+
+          <div style="margin-top:1.5em;">
+            文章类型选择：<a href="/tag/%E5%BC%80%E5%8F%91/" class="set-5">开发</a> <a href="/tag/%E7%AE%97%E6%B3%95/" class="set-1">算法</a>
+          </div>
+          
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+
+  
+  
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:lubin62@qq.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-blue"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-06-05 14:18:03 +0800" itemprop="datePublished" class="post-meta__date date">2019-06-05</time> &#8226; <span class="post-meta__tags tags">开发</span>
+    </div>
+    <h1 class="post-title">OSX安装PHP5.6</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="系统环境">系统环境</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>macOs：Mojave 10.14.4
+</code></pre></div></div>
+
+<h2 id="需要提前安装的软件">需要提前安装的软件</h2>
+
+<ul>
+  <li>下载<a href="https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.11.dmg">X11</a></li>
+</ul>
+
+<h2 id="安装过程使用的工具">安装过程使用的工具</h2>
+
+<ul>
+  <li>brew</li>
+  <li>make</li>
+  <li>X11安装包</li>
+</ul>
+
+<h2 id="安装过程中遇到的问题">安装过程中遇到的问题</h2>
+
+<ul>
+  <li>库文件不存在</li>
+  <li>第三方博客的内容不全</li>
+  <li>个人理解偏差</li>
+</ul>
+
+<h2 id="我的osx缺少的库文件">我的OSX缺少的库文件</h2>
+
+<ul>
+  <li>libgd</li>
+  <li>libjpeg</li>
+  <li>libpng</li>
+  <li>libiconv</li>
+  <li>X11\xpm.h</li>
+</ul>
+
+<h2 id="安装步骤">安装步骤</h2>
+
+<ol>
+  <li>检测环境</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./configure <span class="se">\</span>
+<span class="nt">--prefix</span><span class="o">=</span>/usr/local/php5.6 <span class="se">\</span>
+<span class="nt">--with-mysql</span> <span class="se">\</span>
+<span class="nt">--with-xpm-dir</span><span class="o">=</span>/usr/X11/include <span class="se">\</span>
+<span class="nt">--with-gd</span><span class="o">=</span>/usr/local/Cellar/gd/2.2.5 <span class="se">\</span>
+<span class="nt">--enable-gd-native-ttf</span> <span class="se">\</span>
+<span class="nt">--enable-gd-jis-conv</span> <span class="se">\</span>
+<span class="nt">--with-freetype-dir</span><span class="o">=</span>/usr/local/Cellar/freetype/2.10.0 <span class="se">\</span>
+<span class="nt">--with-jpeg-dir</span><span class="o">=</span>/usr/local/Cellar/jpeg/9c <span class="se">\</span>
+<span class="nt">--with-png-dir</span><span class="o">=</span>/usr/local/Cellar/libpng/1.6.37 <span class="se">\</span>
+<span class="nt">--with-libxml-dir</span><span class="o">=</span>/usr/local/Cellar/libxml2 <span class="se">\</span>
+<span class="nt">--with-zlib-dir</span><span class="o">=</span>/usr/local/Cellar/zlib/1.2.11 <span class="se">\</span>
+<span class="nt">--with-iconv</span><span class="o">=</span>/usr/local/Cellar/libiconv/1.16 <span class="se">\</span>
+<span class="nt">--enable-xml</span> <span class="se">\</span>
+<span class="nt">--enable-mbstring</span> <span class="se">\</span>
+<span class="nt">--enable-sockets</span> <span class="se">\</span>
+<span class="nt">--enable-simplexml</span> <span class="se">\</span>
+<span class="nt">--enable-soap</span> <span class="se">\</span>
+<span class="nt">--enable-mbstring</span><span class="o">=</span>all <span class="se">\</span>
+<span class="nt">--enable-sockets</span> <span class="se">\</span>
+<span class="nt">--enable-pdo</span> <span class="se">\</span>
+<span class="nt">--with-curl</span><span class="o">=</span>/usr/local/Cellar/curl/7.65.0 <span class="se">\</span>
+<span class="nt">--with-config-file-path</span><span class="o">=</span>/usr/local/php5.6/etc <span class="se">\</span>
+<span class="nt">--with-mhash</span> <span class="se">\</span>
+<span class="nt">--enable-cli</span> <span class="se">\</span>
+<span class="nt">--enable-fpm</span> <span class="se">\</span>
+<span class="nt">--with-pdo-mysql</span>
+</code></pre></div></div>
+
+<p>configure 参数需要修改以及注意的地方，缺少的库文件都是用<code class="highlighter-rouge">brew</code>安装，安装的目录也要填写brew的安装目录</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–prefix</td>
+      <td>make install的安装目录</td>
+    </tr>
+    <tr>
+      <td>–with-xpm-dir</td>
+      <td>xpm的安装目录</td>
+    </tr>
+    <tr>
+      <td>–with-gd</td>
+      <td>libgd库的安装目录</td>
+    </tr>
+    <tr>
+      <td>–with-freetype-dir</td>
+      <td>libfreetype的安装目录</td>
+    </tr>
+    <tr>
+      <td>–with-jpeg-dir</td>
+      <td>libjpeg的安装目录</td>
+    </tr>
+    <tr>
+      <td>–with-png-dir</td>
+      <td>libpng的安装目录</td>
+    </tr>
+    <tr>
+      <td>–with-zlib-dir</td>
+      <td>zlib的安装目录</td>
+    </tr>
+    <tr>
+      <td>–with-iconv</td>
+      <td>libiconv的安装目录</td>
+    </tr>
+    <tr>
+      <td>–with-curl</td>
+      <td>libcurl的安装目录</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>开始编译安装</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>make <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>这样就会将php安装到上面<code class="highlighter-rouge">--prefix</code>的目录下面</p>
+
+<p>在make编译的过程之中还会出现几个比较奇怪的问题：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>错误：X11/xpm.h：没有那个文件或目录
+</code></pre></div></div>
+<p>将<code class="highlighter-rouge">/usr/X11/include/X11</code>（也就是有xpm.h的目录）这个目录下的文件复制到<code class="highlighter-rouge">ext/gd</code>下面去</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ld: symbol<span class="o">(</span>s<span class="o">)</span> not found <span class="k">for </span>architecture x86_64
+</code></pre></div></div>
+<p>具体参考为下面的第一二篇文章，将提示的类库在编译目录下的<code class="highlighter-rouge">Makefile</code>中<code class="highlighter-rouge">EXTRA_LIBS</code>中的相关配置项，改成我们类库的实际安装目录。我这边遇到的问题是iconv库的问题。我将<code class="highlighter-rouge">-liconv</code> （PS：我编译出来Makefile中有两个只修改一个）修改成libiconv的安装目录。</p>
+
+<h2 id="总结与思考">总结与思考</h2>
+<p>在整个的编译过程之中，用了半天的时间开始编译，在这个过程之中遇到了很多问题：在上面的开始执行<code class="highlighter-rouge">configuare</code>的时候，由于用的命令都是参考博客里面的参数，自己没有修改，在检测的时候也没有报错，就接着继续<code class="highlighter-rouge">make and make install</code>，导致一直报错。后面才意识到可能是由于类库文件的地址写错了。于是改了过来，编译成功。在整个过程之中，收获的东西不仅仅是编译成功了php5.6，而是用别人的东西还需要有自己的思考。</p>
+
+<h2 id="参考的博客">参考的博客</h2>
+
+<ul>
+  <li>1.<a href="https://www.jianshu.com/p/0e76e0083da5">从源码编译安装 PHP 运行环境</a></li>
+  <li>2.<a href="https://jzz.moe/mac-e7-bc-96-e8-af-91php7-e6-97-b6-e5-bc-95-e5-85-a5openssl-e6-97-b6-e7-9a-84-e9-94-99-e8-af-afundefined-symbols-for-architecture-x86_64/">Mac编译PHP7时引入OpenSSL时的错误Undefined symbols for architecture x86_64</a></li>
+  <li>3.<a href="https://www.jianshu.com/p/095c46149bbe">mac 编译安装php5.6.40</a></li>
+</ul>
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2019/06/Supservisor%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" title="link to OSX Supervisor报错">OSX Supervisor报错</a></h2>
+       <p class="excerpt">问题描述用brew安装的supervisor没有投入使用。在安装php5.6之后，想让supervisor来管理php-fpm，进入superviosrctl，在命令后下报了以下的错误error: &lt;class 'xmlrpclib.ProtocolError'&gt;, &lt;ProtocolError for 127.0.0.1/RPC2: 404 Not Found&gt;: file: /usr/local/Cellar/supervisor/3.3.5/libexec/l...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2019-06-06 15:23:51 +0800" class="post-list__meta--date date">2019-06-06</time> &#8226; <span class="post-list__meta--tags tags">开发</span><a class="btn-border-small" href=/2019/06/Supservisor%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/>继续阅读</a></div>
+   </div>
+   
+   
+   
+</section>
+
+
+            <section class="footer">
+    <footer>
+    	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
+        <!--<span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-06-13 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>-->
+        <span class="footer__copyright">本站由 <a href="#">@陆彬</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站主题</a> - &copy; 2019</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>
