@@ -178,8 +178,8 @@
 	}
 
 	temp := -1
-	stop := 0
 	first := strs[0]
+Loop:
 	for i := 0; i &lt; len(first); i++ {
 		for index,item := range strs {
 			if index == 0 {
@@ -189,15 +189,11 @@
 				break
 			}
 			if item[i] != first[i] {
-				stop = 1
-				break
+				break Loop
 			}
 			if index == arrLen - 1 {
 				temp = i
 			}
-		}
-		if stop == 1 {
-			break
 		}
 	}
 	if temp &lt; 0 {
@@ -216,6 +212,7 @@
   <li>在思考的时候只用了几分钟，代码的边际范围没有确定好，没有考虑到空元素，空数组的问题；</li>
   <li>代码没有一开始做好单元测试，导致很多重复的测试用例重复错误；</li>
   <li><code class="highlighter-rouge">Golang</code>里面的<code class="highlighter-rouge">break</code>关键字没有理解好，<code class="highlighter-rouge">break</code>只是终结本循环体，并不会跳出外层的循环体。</li>
+  <li>在<code class="highlighter-rouge">Golang</code>中，可以用标签的形式跳出外层的循环。</li>
 </ol>
 
   </section>
@@ -239,7 +236,7 @@
             <section class="footer">
     <footer>
     	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
-        <!--<span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-06-17 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>-->
+        <!--<span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-06-18 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>-->
         <span class="footer__copyright">本站由 <a href="#">@陆彬</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站主题</a> - &copy; 2019</span>
     </footer>
 </section>

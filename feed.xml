@@ -5,8 +5,8 @@
     <description>记录生活的点滴</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Jun 2019 17:39:55 +0800</pubDate>
-    <lastBuildDate>Mon, 17 Jun 2019 17:39:55 +0800</lastBuildDate>
+    <pubDate>Tue, 18 Jun 2019 15:47:58 +0800</pubDate>
+    <lastBuildDate>Tue, 18 Jun 2019 15:47:58 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -61,8 +61,8 @@
 	}
 
 	temp := -1
-	stop := 0
 	first := strs[0]
+Loop:
 	for i := 0; i &amp;lt; len(first); i++ {
 		for index,item := range strs {
 			if index == 0 {
@@ -72,15 +72,11 @@
 				break
 			}
 			if item[i] != first[i] {
-				stop = 1
-				break
+				break Loop
 			}
 			if index == arrLen - 1 {
 				temp = i
 			}
-		}
-		if stop == 1 {
-			break
 		}
 	}
 	if temp &amp;lt; 0 {
@@ -99,6 +95,7 @@
   &lt;li&gt;在思考的时候只用了几分钟，代码的边际范围没有确定好，没有考虑到空元素，空数组的问题；&lt;/li&gt;
   &lt;li&gt;代码没有一开始做好单元测试，导致很多重复的测试用例重复错误；&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Golang&lt;/code&gt;里面的&lt;code class=&quot;highlighter-rouge&quot;&gt;break&lt;/code&gt;关键字没有理解好，&lt;code class=&quot;highlighter-rouge&quot;&gt;break&lt;/code&gt;只是终结本循环体，并不会跳出外层的循环体。&lt;/li&gt;
+  &lt;li&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;Golang&lt;/code&gt;中，可以用标签的形式跳出外层的循环。&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Mon, 17 Jun 2019 16:13:50 +0800</pubDate>
